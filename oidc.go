@@ -183,6 +183,7 @@ type UserInfo struct {
 	Email       string `json:"email"`
 	GivenName   string `json:"givenName"`
 	FamilyName  string `json:"familyName"`
+	Picture     string `json:"picture"`
 
 	claims []byte
 }
@@ -194,6 +195,7 @@ type googleUserInfo struct {
 	EmailVerified bool   `json:"email_verified"`
 	GivenName     string `json:"given_name"`
 	FamilyName    string `json:"family_name"`
+	Picture       string `json:"picture"`
 }
 
 type microsoftUserInfo struct {
@@ -265,6 +267,7 @@ func getGoogleUserInfo(body []byte) (*UserInfo, error) {
 		Email:       g.Email,
 		GivenName:   g.GivenName,
 		FamilyName:  g.FamilyName,
+		Picture:     g.Picture,
 		claims:      body,
 	}, nil
 }
